@@ -1,0 +1,67 @@
+html{
+    font-size:100px;
+}
+html,body{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.cube{
+    width:100%;
+    height:100%;
+    background:url("../cube/zf_cubeBg.jpg") no-repeat;
+    background-size:cover;
+    /*这是我们立方体展示的舞台，我们想要*/
+    perspective: 2000px;
+}
+.cube .box{
+    width:5.1rem;
+    height:5.1rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-2.55rem 0 0 -2.55rem;
+    /*想让哪个盒子实现3D变形，我们需要设置3d变形属性*/
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /*设置3d盒子开始位置的坐标点（中心点）*/
+    -webkit-transform-origin: center center 0;
+    transform-origin: center center 0;
+    -webkit-transform: scale(0.6) rotateX(45deg) rotateY(45deg);
+    transform: scale(0.6) rotateX(45deg) rotateY(45deg);
+    /*为了让其旋转有动画效果，我们给其加一个过渡动画*/
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.cube .box img{
+    width:100%;
+    height:100%;
+    position: absolute;
+    /*top:50%;
+    left:50%;
+    margin:-2.55rem 0 0 -2.55rem;*/
+}
+.cube .box img:nth-child(1){
+    -webkit-transform: translateZ(2.55rem);
+    transform: translateZ(2.55rem);
+}
+.cube .box img:nth-child(2){
+    -webkit-transform: translateZ(-2.55rem) rotateY(180deg);
+    transform: translateZ(-2.55rem)rotateY(180deg);
+}
+.cube .box img:nth-child(3){
+    -webkit-transform: translateX(-2.55rem) rotateY(-90deg);
+    transform: translateX(-2.55rem) rotateY(-90deg);
+}
+.cube .box img:nth-child(4){
+    -webkit-transform: translateX(2.55rem) rotateY(90deg);
+    transform: translateX(2.55rem) rotateY(90deg);
+}
+.cube .box img:nth-child(5){
+    -webkit-transform: translateY(-2.55rem) rotateX(-90deg);
+    transform: translateY(-2.55rem) rotateX(-90deg);
+}
+.cube .box img:nth-child(6){
+    -webkit-transform: translateY(2.55rem) rotateX(90deg);
+    transform: translateY(2.55rem) rotateX(90deg);
+}
